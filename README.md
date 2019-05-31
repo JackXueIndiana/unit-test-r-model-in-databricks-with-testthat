@@ -23,3 +23,8 @@ command 2 databricks fs cp --overwrite test_ cases.r "dbfs:/mnt/r_model/"
 command 3 databricks fs ls "dbfs:/mnt/r_model/"
 
 Now you can go back to the workspace and run the test_suite.r interactively which will generate a XML file in JUNIT format and saved in DBFS. You can also set up a Databricks job to run test_suite.r remotely.
+
+The JUNIT XML can be copied to the PC with the following command:
+
+databricks fs cp "dbfs:/mnt/r_model/outputfile/r_unit.xml" .
+
