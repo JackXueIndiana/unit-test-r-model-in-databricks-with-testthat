@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Unit Tests Linear Regression Model" timestamp="2019-05-22 02:06:28" hostname="0423-023623-dumpy796-10-139-64-5" tests="6" skipped="0" failures="1" errors="0" time="0.86">
+    <testcase time="0.78" classname="Unit_Tests_Linear_Regression_Model" name="Output_Shape"/>
+    <testcase time="0.02" classname="Unit_Tests_Linear_Regression_Model" name="Output_Shape"/>
+    <testcase time="0.06" classname="Unit_Tests_Linear_Regression_Model" name="Output_Shape">
+      <failure type="failure" message="`x` not equal to `expected`. (@test_that.r#41)">`x` not equal to `expected`.
+1/1 mismatches
+x[1]: "numeric"
+y[1]: "boolean"</failure>
+    </testcase>
+    <testcase time="0" classname="Unit_Tests_Linear_Regression_Model" name="Output_Value_Two_Sides"/>
+    <testcase time="0" classname="Unit_Tests_Linear_Regression_Model" name="Output_Value_Two_Sides"/>
+    <testcase time="0" classname="Unit_Tests_Linear_Regression_Model" name="Output_Value_One_Side"/>
+  </testsuite>
+</testsuites>
