@@ -29,3 +29,13 @@ The JUNIT XML can be copied to the PC with the following command:
 
 databricks fs cp "dbfs:/mnt/r_model/outputfile/r_unit.xml" .
 
+## Regression tests with dataset
+To conduct a regression test, say after re-training a model, besides the unit tests, you need to use a dataset to do a regression test to verify the KPI, say R^2, is comparable to the one we got in training/retraining.
+
+The way to do is is still using the TestThat package. You need to load in the ground truth data to compared the predicted values from the current model. The R^2 can be calculated as 
+
+r_sqr <- cor(y, y_hat)^2
+
+You can set a threshold, say
+
+abs(r_sqr - r_sqr_train)<=0.001
