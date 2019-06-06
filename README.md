@@ -39,3 +39,28 @@ r_sqr <- cor(y, y_hat)^2
 You can set a threshold, say
 
 abs(r_sqr - r_sqr_train)<=0.001
+
+## Running two test_cases files in sequence
+If we make the folloiwng change in the script test_reg_suite.r:
+
+test_dir("/dbfs/mnt/r_model", reporter = JunitReporter$new(file = "/dbfs/mnt/r_model/outputfile/r_reg_dir.xml"))
+
+#test_file("/dbfs/mnt/r_model/test_reg_cases.r", reporter = JunitReporter$new(file = "/dbfs/mnt/r_model/outputfile/r_reg.xml"))
+
+The all the test_xxx.r files in folder /dbfs/mnt/r_model will be run in alphabeta-roder. The results are written in file r_reg_dir.xml
+
+If you load this file into Azure DevOps test step, you show see the rings for successful tests and failed one. Plus, you can drill down in Output_Shape/detail to see the exact test case which failed.
+
+## Define a Databricks Cluster Job for the test suite
+In your Azure Databricks workspace/Jobs you can define a job by point to the script test_reg_suite.r also using the existed cluster (mycluster) which will use existed mountpoint /dbfs/mnt.
+
+You can manually start a run and observe the status of the job changing form Running to finally Successed.
+
+## Running the test suite remotely
+Now from the PC with databricks cli, we can trig the job by the folloiwng command:
+
+C:\Users\xinxue\Desktop\thatthat>databricks jobs run-now --job-id 2
+{
+  "run_id": 5,
+  "number_in_job": 2
+}
