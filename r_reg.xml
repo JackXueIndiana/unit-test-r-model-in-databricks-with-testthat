@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Regression Tests Linear Regression Model with Dataset" timestamp="2019-06-06 19:29:18" hostname="0423-023623-dumpy796-10-139-64-4" tests="1" skipped="0" failures="0" errors="0" time="1.04">
+    <testcase time="1.04" classname="Regression_Tests_Linear_Regression_Model_with_Dataset" name="Dif_R_Sqrs"/>
+  </testsuite>
+</testsuites>
