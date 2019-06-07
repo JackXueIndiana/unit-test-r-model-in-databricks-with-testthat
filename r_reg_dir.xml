@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Unit Tests Linear Regression Model" timestamp="2019-06-06 20:58:31" hostname="0423-023623-dumpy796-10-139-64-4" tests="6" skipped="0" failures="1" errors="0" time="0.63">
+    <testcase time="0.63" classname="Unit_Tests_Linear_Regression_Model" name="Output_Shape"/>
+    <testcase time="0" classname="Unit_Tests_Linear_Regression_Model" name="Output_Shape"/>
+    <testcase time="0" classname="Unit_Tests_Linear_Regression_Model" name="Output_Shape">
+      <failure type="failure" message="`x` not equal to `expected`. (@test_cases.r#41)">`x` not equal to `expected`.
+1/1 mismatches
+x[1]: "numeric"
+y[1]: "boolean"</failure>
+    </testcase>
+    <testcase time="0" classname="Unit_Tests_Linear_Regression_Model" name="Output_Value_Two_Sides"/>
+    <testcase time="0" classname="Unit_Tests_Linear_Regression_Model" name="Output_Value_Two_Sides"/>
+    <testcase time="0" classname="Unit_Tests_Linear_Regression_Model" name="Output_Value_One_Side"/>
+  </testsuite>
+  <testsuite name="Regression Tests Linear Regression Model with Dataset" timestamp="2019-06-06 20:58:32" hostname="0423-023623-dumpy796-10-139-64-4" tests="1" skipped="0" failures="0" errors="0" time="0.86">
+    <testcase time="0.86" classname="Regression_Tests_Linear_Regression_Model_with_Dataset" name="Dif_R_Sqrs"/>
+  </testsuite>
+</testsuites>
