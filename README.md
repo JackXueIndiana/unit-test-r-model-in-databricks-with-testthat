@@ -52,15 +52,63 @@ The all the test_xxx.r files in folder /dbfs/mnt/r_model will be run in alphabet
 If you load this file into Azure DevOps test step, you show see the rings for successful tests and failed one. Plus, you can drill down in Output_Shape/detail to see the exact test case which failed.
 
 ## Define a Databricks Cluster Job for the test suite
-In your Azure Databricks workspace/Jobs you can define a job by point to the script test_reg_suite.r also using the existed cluster (mycluster) which will use existed mountpoint /dbfs/mnt.
+In your Azure Databricks workspace/Jobs you can define a job by point to the script test_reg_suite.r also using the existed cluster (mycluster) which will use existed mountpoint /dbfs/mnt. After the job is defined, you will see the unique id of the job, called job-id.
 
 You can manually start a run and observe the status of the job changing form Running to finally Successed.
 
 ## Running the test suite remotely
-Now from the PC with databricks cli, we can trig the job by the folloiwng command:
+Now from the PC with databricks cli, we can remotely start the job by the folloiwng commands.
 
+First you get all runs about the job:
+
+C:\Users\xinxue\Desktop\thatthat>databricks runs list --job-id 2
+
+5  reg_test_r_model  TERMINATED  SUCCESS  https://eastus2.azuredatabricks.net/?o=4415937966963121#job/2/run/2
+3  reg_test_r_model  TERMINATED  SUCCESS  https://eastus2.azuredatabricks.net/?o=4415937966963121#job/2/run/1
+
+Second you submit a new run of the job:
 C:\Users\xinxue\Desktop\thatthat>databricks jobs run-now --job-id 2
+
+The return is a JSON
 {
-  "run_id": 5,
+  "run_id": 6,
   "number_in_job": 2
+}
+
+Now we can check the status changing based on the run_id:
+databricks runs list --job-id 2
+
+The return is another JSON
+{
+  "job_id": 2,
+  "run_id": 6,
+  "number_in_job": 3,
+  "original_attempt_run_id": 6,
+  "state": {
+    "life_cycle_state": "TERMINATED",
+    "result_state": "SUCCESS",
+    "state_message": ""
+  },
+  "task": {
+    "notebook_task": {
+      "notebook_path": "/Shared/r_model/test/reg_test/test_reg_suite",
+      "revision_timestamp": 0
+    }
+  },
+  "cluster_spec": {
+    "existing_cluster_id": "0423-023623-dumpy796"
+  },
+  "cluster_instance": {
+    "cluster_id": "0423-023623-dumpy796",
+    "spark_context_id": "3267710092701087218"
+  },
+  "start_time": 1559868031176,
+  "setup_duration": 320000,
+  "execution_duration": 27000,
+  "cleanup_duration": 0,
+  "trigger": "ONE_TIME",
+  "creator_user_name": "xinxue@microsoft.com",
+  "run_name": "reg_test_r_model",
+  "run_page_url": "https://eastus2.azuredatabricks.net/?o=4415937966963121#job/2/run/3",
+  "run_type": "JOB_RUN"
 }
