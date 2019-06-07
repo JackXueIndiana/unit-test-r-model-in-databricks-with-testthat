@@ -49,7 +49,7 @@ test_dir("/dbfs/mnt/r_model", reporter = JunitReporter$new(file = "/dbfs/mnt/r_m
 
 The all the test_xxx.r files in folder /dbfs/mnt/r_model will be run in alphabeta-roder. The results are written in file r_reg_dir.xml
 
-If you load this file into Azure DevOps test step, you show see the rings for successful tests and failed one. Plus, you can drill down in Output_Shape/detail to see the exact test case which failed.
+If you load this file into Azure DevOps test step, you show see the rings for successful tests and failed one. Plus, you can drill down in Output_Shape/detail to see the exact test case which failed (see devops_test_results.png).
 
 ## Define a Databricks Cluster Job for the test suite
 In your Azure Databricks workspace/Jobs you can define a job by point to the script test_reg_suite.r also using the existed cluster (mycluster) which will use existed mountpoint /dbfs/mnt. After the job is defined, you will see the unique id of the job, called job-id.
