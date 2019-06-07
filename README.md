@@ -54,7 +54,7 @@ If you load this file into Azure DevOps test step, you show see the rings for su
 ## Define a Databricks Cluster Job for the test suite
 In your Azure Databricks workspace/Jobs you can define a job by point to the script test_reg_suite.r also using the existed cluster (mycluster) which will use existed mountpoint /dbfs/mnt. After the job is defined, you will see the unique id of the job, called job-id.
 
-You can manually start a run and observe the status of the job changing form Running to finally Successed.
+You can manually start a run and observe the status of the job changing from Queuing to Running finally to Succeeded.
 
 ## Running the test suite remotely
 Now from the PC with databricks cli, we can remotely start the job by the folloiwng commands.
@@ -109,3 +109,5 @@ The return is another JSON
   "run_page_url": "https://eastus2.azuredatabricks.net/?o=4415937966963121#job/2/run/3",
   "run_type": "JOB_RUN"
 }
+
+The return results can also be presented in Table format.
