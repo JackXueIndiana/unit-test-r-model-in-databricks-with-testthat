@@ -59,26 +59,23 @@ You can manually start a run and observe the status of the job changing form Run
 ## Running the test suite remotely
 Now from the PC with databricks cli, we can remotely start the job by the folloiwng commands.
 
-First you get all runs about the job:
+You can submit a new run of the job:
 
-C:\Users\xinxue\Desktop\thatthat>databricks runs list --job-id 2
-
-5  reg_test_r_model  TERMINATED  SUCCESS  https://eastus2.azuredatabricks.net/?o=4415937966963121#job/2/run/2
-3  reg_test_r_model  TERMINATED  SUCCESS  https://eastus2.azuredatabricks.net/?o=4415937966963121#job/2/run/1
-
-Second you submit a new run of the job:
-C:\Users\xinxue\Desktop\thatthat>databricks jobs run-now --job-id 2
+databricks jobs run-now --job-id 2
 
 The return is a JSON
+
 {
   "run_id": 6,
   "number_in_job": 2
 }
 
 Now we can check the status changing based on the run_id:
+
 databricks runs list --job-id 2
 
 The return is another JSON
+
 {
   "job_id": 2,
   "run_id": 6,
